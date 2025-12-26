@@ -8,3 +8,13 @@ export function echoData<T>(data: T) {
     timestamp: new Date().toISOString()
   };
 }
+
+export function getHealthStatus() {
+  const uptimeSeconds = Math.floor(process.uptime());
+
+  return {
+    status: "ok",
+    uptimeSeconds,
+    timestamp: new Date().toISOString()
+  };
+}
